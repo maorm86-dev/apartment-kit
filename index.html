@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ערכת מכירת דירה בלי מתווך</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7f6;--card:#fff;--ink:#13302f;--mut:#5b6f6d;--line:#d6dfdd;--acc:#1b6b5f;--tipbg:#fff4cf;--tipink:#5a4400;--ok:#2e8b57;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b1a;--card:#172625;--ink:#e6f0ee;--mut:#9fb4b1;--line:#2a3d3b;--acc:#4fc3ae;--tipbg:#3a3016;--tipink:#f3dd9a;--ok:#5ccf92;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1b1a;--card:#172625;--ink:#e6f0ee;--mut:#9fb4b1;--line:#2a3d3b;--acc:#4fc3ae;--tipbg:#3a3016;--tipink:#f3dd9a;--ok:#5ccf92;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Rubik,Heebo,Arial,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:14px 16px 10px;border-bottom:1px solid var(--line);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.w{max-width:760px;margin:0 auto}
+h1{font-size:1.5rem;font-weight:800;margin:0 0 8px}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.pt{font-size:.85rem;color:var(--mut);margin-top:6px}
+main{padding:16px}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:0 0 12px}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;gap:10px}
+summary span{color:var(--mut);font-weight:500;font-size:.9rem}
+.in{padding:0 16px 16px}
+label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+input[type=checkbox]{width:20px;height:20px;margin-top:3px;accent-color:var(--acc);flex:none}
+label.d{color:var(--mut);text-decoration:line-through}
+.tip{background:var(--tipbg);color:var(--tipink);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:.95rem}
+.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px}
+input[type=text]{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.tp{border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:12px}
+.tp h3{margin:0 0 6px;font-size:1rem}
+pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0 0 8px;color:var(--ink)}
+button{font:inherit;font-weight:700;background:var(--acc);color:var(--bg);border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+button.g{background:none;color:var(--mut);border:1px solid var(--line);font-weight:500}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.ft{font-size:.82rem;color:var(--mut);padding:8px 0 24px}
+:root{--bg:#f6f3fb;--card:#fff;--ink:#2f2c47;--mut:#6a6784;--line:#e2dcf0;--acc:#7a6bc4;--tipbg:#fdf3c8;--tipink:#5b4a12;--ok:#6dbf9a;--k0:#cdeee3;--k1:#fddccb;--k2:#e1d9f6;--k3:#d0e6f8;--k4:#fbf0bf;--k5:#f9d3e0;--k6:#d9edcc;--k7:#d6dcf5;--k8:#f0e0f3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a2b;--card:#26233a;--ink:#ece9fa;--mut:#aaa6c6;--line:#38345a;--acc:#b6a9f5;--tipbg:#3f3818;--tipink:#f4e3a0;--ok:#7fd4ac;--k0:#29483f;--k1:#4d3a30;--k2:#3a3560;--k3:#2b4560;--k4:#4a4423;--k5:#543445;--k6:#34492c;--k7:#343a63;--k8:#4a3552}}
+:root[data-theme="dark"]{--bg:#1c1a2b;--card:#26233a;--ink:#ece9fa;--mut:#aaa6c6;--line:#38345a;--acc:#b6a9f5;--tipbg:#3f3818;--tipink:#f4e3a0;--ok:#7fd4ac;--k0:#29483f;--k1:#4d3a30;--k2:#3a3560;--k3:#2b4560;--k4:#4a4423;--k5:#543445;--k6:#34492c;--k7:#343a63;--k8:#4a3552}
+header{border-bottom:0}
+header::after{content:"";display:block;height:6px;margin-top:10px;border-radius:3px;background:linear-gradient(90deg,var(--k0),var(--k1),var(--k2),var(--k3),var(--k4),var(--k5),var(--k6),var(--k7))}
+h1,summary{font-family:'Varela Round',Rubik,Arial,sans-serif;font-weight:400}
+h1{font-size:1.6rem}
+summary{font-size:1.08rem;border-radius:12px;align-items:center}
+details{border-radius:12px;overflow:hidden;border-color:var(--line)}
+details[open]>summary{border-bottom:1px solid var(--line)}
+.bar{background:var(--line);height:12px}
+.bar i{background:linear-gradient(90deg,var(--k3),var(--ok))}
+.k0>summary{background:var(--k0)}.k1>summary{background:var(--k1)}.k2>summary{background:var(--k2)}.k3>summary{background:var(--k3)}.k4>summary{background:var(--k4)}.k5>summary{background:var(--k5)}.k6>summary{background:var(--k6)}.k7>summary{background:var(--k7)}.k8>summary{background:var(--k8)}
+.in{padding-top:12px}
+.nt{margin-top:12px}.nt b{display:block;font-size:.9rem;color:var(--mut);margin-bottom:4px}
+textarea{width:100%;min-height:84px;resize:vertical;padding:10px;border:1px dashed var(--acc);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.tip{border-inline-start:4px solid #e0b93a}
+</style>
+</head>
+<body>
+<header><div class="w"><h1>ערכת מכירת דירה בלי מתווך</h1><div class="bar"><i id="pb"></i></div><div class="pt" id="pt"></div></div></header>
+<main><div class="w" id="app"></div>
+<p class="ft w">המספרים הם הערכות כלליות. לפני שמחליטים, אמתו מול עורך דין מקרקעין ורואה חשבון. הסימונים נשמרים בדפדפן שלכם בלבד.</p></main>
+<script>
+const S=[
+{t:"1. מחקר ותמחור",tip:"הצעות נמשכות לפי המחיר המבוקש, אבל העסקה נסגרת לפי עסקאות אמת. תמחרו קרוב לשוק כדי לייצר תחרות. מחיר גבוה מדי בשבועות הראשונים שורף את המודעה, והורדת מחיר אחר כך משדרת חולשה.",i:["לאסוף עסקאות אמת מ\"מידע נדל\"ן\" ברשות המסים (12 חודשים, אותו רחוב ושכונה)","לרשום 5 עד 10 דירות דומות שנמכרו: שטח, קומה, מצב, מחיר סגירה","לעקוב אחרי המתחרות ביד2 ובמדלן ולרשום כמה זמן הן באוויר","לחשב מחיר למ\"ר ולהתאים לקומה, מרפסת, חניה, מחסן ונוף","לבדוק פוטנציאל תמ\"א / פינוי-בינוי שיכול להצדיק מחיר גבוה יותר","לקבוע מחיר יעד, מחיר מבוקש (כ-3% עד 5% מעליו) ומחיר רצפה שלא נחשף","לשקול שמאי מקרקעין אם יש מאפיין חריג"]},
+{t:"2. מסמכים ובדיקות משפטיות",tip:"קונים רציניים ובנקים מבקשים מסמכים מהר. מי שמגיע מוכן סוגר מהר יותר, ובמחיר טוב יותר. בדירה ותיקה, בעיית היתר או שעבוד שמתגלה באמצע עסקה היא הסיבה הנפוצה לסחיטת הנחה.",i:["נסח טאבו עדכני (או אישור זכויות) ובדיקה שאין שעבודים והערות","אם יש משכנתא: לפנות לבנק לבדוק פירעון מוקדם ומחיקת שעבוד","אישורי העדר חובות: עירייה (ארנונה ומים) וועד בית","היתר בנייה, תוכניות וטופס 4 או תעודת גמר","בדיקת שינויים ללא היתר (מרפסת סגורה, הרחבה) והתייעצות איך לטפל","ייפוי כוח ומסמכי זהות של כל הבעלים","פגישה עם עורך דין מקרקעין לפני הפרסום","פגישה עם רואה חשבון או יועץ מס לגבי מס שבח ופטורים"]},
+{t:"3. הכנת הדירה",tip:"הכסף הגדול הוא בהצגה ולא בשיפוץ. ניקיון, צבע ניטרלי וריקון חפצים עולים מעט ומעלים את התחושה של הקונה. שיפוץ יקר כמעט אף פעם לא חוזר במלואו, כי קונים של דירה ותיקה מתכננים לשפץ בעצמם.",i:["ניקיון יסודי: חלונות, תריסים, מזגנים, מטבח, חדרי רחצה","פינוי עודפי רהיטים וחפצים אישיים, כדי שהחדרים ייראו גדולים","צבע חדש בגוון ניטרלי (לפחות בחדרים הבולטים)","תיקון בזיזים קטנים: ברזים, ידיות, מנעולים, תריסים, נורות","טיפול ברטיבות ועובש לפני הצילום (קונים בודקים בדיוק את זה)","ניקוי חדר מדרגות, כניסה וחזית הבניין (בתיאום עם הוועד)","הצגה קלה: כריות, מצעים נקיים, צמחים, ריח נעים"]},
+{t:"4. צילום ויזואליה",tip:"רוב הקונים מחליטים אם להתקשר לפי 3 התמונות הראשונות. תמונה ראשית עם אור טוב ורוחב מחזירה יותר פניות מכל טקסט. אל תצלמו בטלפון אנכי, אל תסתירו פגמים (הם יתגלו בביקור) ואל תוסיפו פילטרים.",i:["לצלם באור יום, כל התריסים פתוחים וכל האורות דלוקים","צלם נדל\"ן מקצועי (בערך 400 עד 1,000 ש\"ח) או טלפון חדש על חצובה, אופקי","תמונות: סלון, מטבח, כל חדר, רחצה, מרפסת, נוף, חזית, חניה, מחסן, הסביבה","10 עד 20 תמונות בסדר הגיוני, ותמונה ראשית חזקה","סרטון סיור 30 עד 60 שניות","תוכנית קומה פשוטה עם מ\"ר לכל חדר","רחפן אם יש נוף או מיקום מיוחד"]},
+{t:"5. פרסום ושיווק",tip:"פרסמו הכול ביום אחד, כדי ליצור גל פניות ותחושת ביקוש. אל תפרסמו בערוץ אחד בלבד, ועדכנו מודעות כל כמה ימים. אם יש מעט פניות אחרי שבועיים, הבעיה בדרך כלל בתמונות, בכותרת או במחיר, לא בערוץ.",i:["יד2 (כולל הקפצה או קידום בתשלום בשבועיים הראשונים)","מדלן","פייסבוק Marketplace","3 עד 5 קבוצות פייסבוק של ראש העין (לבדוק חוקי כל קבוצה)","וואטסאפ: משפחה, חברים, עבודה, קבוצות בניין ושכונה","אינסטגרם / טיקטוק עם סרטון הסיור","שלט \"למכירה\" במרפסת או בבניין (בתיאום עם הוועד ובדיקת כללי העירייה)","שכנים ווועד בית: לפעמים להם יש קרובים שמחפשים בדיוק שם","יועצי משכנתאות ומשקיעים באזור","לוחות מודעות מקומיים (סופר, בית כנסת, מתנ\"ס)","מעקב: כמה פניות הגיעו מכל ערוץ"]},
+{t:"6. סינון קונים וביקורים",tip:"סננו בטלפון לפני שמזמינים. הצגות מרוכזות בחלון של 2 עד 3 שעות יוצרות תחרות אמיתית. אל תנהלו משא ומתן באמצע ביקור: אספו פרטים ותנו תשובה בכתב.",i:["שיחת סינון: קונה לעצמו או להשקעה? יש אישור עקרוני למשכנתא או הון? מתי רוצה להיכנס?","לשאול אם מוכר דירה קיימת (תלוי במכירה = סיכון)","הצגה מרוכזת ביום ושעה אחת","הדירה נקייה, מאווררת ומוארת","להישאר זמינים לשאלות ולא ללוות את הקונה בכל חדר","דף פרטים לכל מבקר","רשימת מבקרים: שם, טלפון, רושם, רצינות","מעקב בתוך 24 שעות מכל ביקור"]},
+{t:"7. משא ומתן",tip:"הכוח שלכם הוא תחרות ולא נחישות. קונה שיודע שיש עוד מתעניינים מציע מהר ובמחיר טוב יותר. אל תחשפו את הרצפה, אל תענו מיד להצעה הראשונה, והשוו גם תנאים (מסירה, תשלום, מימון) ולא רק מחיר.",i:["לא חושפים מחיר רצפה","לא עונים מיד להצעה ראשונה: \"נבחן ונחזור אליכם\"","מועד אחיד: \"מקבלים הצעות בכתב עד תאריך X\"","הצעה בכתב עם הוכחת יכולת מימון","להשוות: מחיר, מועד מסירה, גובה מקדמה, תנאי תשלום, תלות במימון","להשיב לנימוקי הנגד בנתוני עסקאות ולא ברגש","לא סוגרים בוואטסאפ: פגישה או שיחה ועורך הדין בודק הכול"]},
+{t:"8. חוזה וסגירה",tip:"אל תחתמו על כלום בלי שעורך הדין קרא. הקפידו על לוח תשלומים ברור ועל שיעבוד או ערבות על כספי הקונה. דווחו על מס שבח בזמן, כי איחור עולה ביוקר.",i:["עורך הדין מכין חוזה מכר ושולח לצד השני","חתימה, מקדמה ולוח תשלומים (לפי ייעוץ עורך הדין)","ערבות או שיעבוד על כספי הקונה לפי החוזה","דיווח לרשות המסים על מס שבח בתוך 30 יום, ותשלום או קבלת פטור","פירעון משכנתא ומחיקת שעבוד","העברת רישום בטאבו","קריאת מונים והעברת חשבונות (מים, חשמל, גז, ארנונה)","סגירת חשבון ועד בית","מסירה, פרוטוקול מסירה וצילומי מצב","קבלת יתרת תמורה רק לפי תנאי החוזה"]}];
+const T=[
+{h:"מודעה ליד2 / מדלן",p:"דירת {r} חדרים מרווחת בראש העין הותיקה, קומה {f}\n\nמוכרים ישירות מהבעלים, בלי מתווך ובלי עמלות.\n{r} חדרים, {m} מ\"ר, קומה {f}. הדירה מתוחזקת ומוכנה לכניסה (או לשיפוץ לפי טעמכם), בבניין ותיק ושקט.\nקרוב לבתי ספר, גנים, תחבורה ושירותים. [להוסיף יתרון ייחודי: מרפסת, נוף, חניה, מחסן, זכויות בנייה]\n\nמחיר: {p} ש\"ח\nלתיאום ביקור: {t}"},
+{h:"פוסט לקבוצות פייסבוק",p:"🏡 למכירה בראש העין הותיקה: דירת {r} חדרים, {m} מ\"ר, קומה {f}\n\nמהבעלים ישירות, בלי מתווך.\n✔ [יתרון 1]\n✔ [יתרון 2]\n✔ [יתרון 3]\n\nמחיר: {p} ש\"ח\nלפרטים וביקור: {t}\n(מצורפות תמונות. אשמח שתשתפו, אולי מישהו מכיר 🙏)"},
+{h:"הודעת וואטסאפ אישית",p:"היי, אנחנו מוכרים את הדירה שלנו בראש העין הותיקה ({r} חדרים, {m} מ\"ר, קומה {f}), בלי מתווך. אם אתם מכירים מישהו שמחפש באזור, נשמח שתעבירו את הפרטים. מצורפות תמונות. תודה רבה! {t}"},
+{h:"כיתוב לאינסטגרם / טיקטוק",p:"סיור בדירה שלנו בראש העין הותיקה 🏡 {r} חדרים, {m} מ\"ר. מוכרים ישירות, בלי מתווך. פרטים בהודעה פרטית או בטלפון {t}\n#ראשהעין #נדלן #דירהלמכירה"},
+{h:"פנייה ליועצי משכנתאות ולמשקיעים",p:"שלום, אנחנו בעלים של דירת {r} חדרים ({m} מ\"ר, קומה {f}) בראש העין הותיקה שמוצעת למכירה ישירה. אם יש לכם לקוחות עם אישור עקרוני או הון עצמי שמחפשים באזור, נשמח לשלוח פרטים ותמונות. תודה, {t}"},
+{h:"פנייה לשכנים ולוועד הבית",p:"שלום שכנים, אנחנו מוכרים את הדירה שלנו (קומה {f}). אם יש למי מכם קרובים או חברים שמחפשים לגור בבניין או בשכונה, נשמח שתעבירו. אפשר לפנות אלינו: {t}. תודה!"}];
+const K='kit1',$=id=>document.getElementById(id);
+let st={},fv={};try{st=JSON.parse(localStorage.getItem(K)||'{}');}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(st));}catch(e){}};
+let nt={};try{nt=JSON.parse(localStorage.getItem(K+'n')||'{}');}catch(e){}
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function prog(){let n=0,d=0;S.forEach((s,a)=>{let c=0;s.i.forEach((_,b)=>{n++;if(st[a+'_'+b]){d++;c++}});const e=$('c'+a);if(e)e.textContent=c+'/'+s.i.length});$('pb').style.width=(n?d/n*100:0)+'%';$('pt').textContent='הושלמו '+d+' מתוך '+n+' משימות'}
+function render(){
+let h='';
+S.forEach((s,a)=>{h+='<details class="k'+a+'"><summary>'+s.t+'<span id="c'+a+'"></span></summary><div class="in">'+s.i.map((x,b)=>'<label><input type="checkbox" data-k="'+a+'_'+b+'"'+(st[a+'_'+b]?' checked':'')+'><span>'+x+'</span></label>').join('')+'<div class="tip"><b>עצת מומחה:</b> '+s.tip+'</div><div class="nt"><b>הערות: מה עשינו ומה נשאר</b><textarea data-n="'+a+'" placeholder="למשל: נקבע צלם ליום ג׳. נשאר: לבדוק היתר מרפסת">'+esc(nt[a]||'')+'</textarea></div></div></details>'});
+h+='<details class="k8"><summary>9. תכנים מוכנים לכל הערוצים</summary><div class="in"><p>מלאו את הפרטים והתכנים יתעדכנו:</p><div class="fm"><input type="text" id="r" placeholder="חדרים"><input type="text" id="m" placeholder="מ\"ר"><input type="text" id="f" placeholder="קומה"><input type="text" id="p" placeholder="מחיר"><input type="text" id="t" placeholder="טלפון"></div><div id="tpl"></div><div class="tip"><b>עצת מומחה:</b> החליפו את הסוגריים המרובעים בפרט אמיתי ספציפי. מודעה עם יתרון קונקרטי (קרבה לפארק, חניה, זכויות) מושכת יותר פניות. העלו מחדש את המודעות כל 2 עד 3 ימים.</div></div></details>';
+$('app').innerHTML=h;
+document.querySelectorAll('input[data-k]').forEach(e=>e.onchange=()=>{st[e.dataset.k]=e.checked;e.closest('label').className=e.checked?'d':'';save();prog()});
+document.querySelectorAll('input[data-k]:checked').forEach(e=>e.closest('label').className='d');
+['r','m','f','p','t'].forEach(i=>$(i).oninput=()=>{fv[i]=$(i).value;tpl()});
+document.querySelectorAll('textarea[data-n]').forEach(e=>e.oninput=()=>{nt[e.dataset.n]=e.value;try{localStorage.setItem(K+'n',JSON.stringify(nt))}catch(x){}});
+tpl();prog()}
+function tpl(){$('tpl').innerHTML=T.map((x,i)=>'<div class="tp"><h3>'+x.h+'</h3><pre id="x'+i+'">'+x.p.replace(/\{(\w)\}/g,(_,k)=>fv[k]||'['+({r:'חדרים',m:'מ"ר',f:'קומה',p:'מחיר',t:'טלפון'})[k]+']').replace(/</g,'&lt;')+'</pre><button data-i="'+i+'">העתקה</button></div>').join('');
+document.querySelectorAll('.tp button').forEach(b=>b.onclick=()=>{const tx=$('x'+b.dataset.i).textContent;const ok=()=>{b.textContent='הועתק';setTimeout(()=>b.textContent='העתקה',1500)};try{navigator.clipboard.writeText(tx).then(ok,()=>fb(tx,ok))}catch(e){fb(tx,ok)}})}
+function fb(tx,ok){const a=document.createElement('textarea');a.value=tx;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}a.remove()}
+render();
+</script>
+</body>
+</html>
